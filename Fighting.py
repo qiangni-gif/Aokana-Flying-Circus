@@ -12,10 +12,12 @@ import datetime
 # from simple_pid import PID
 
 # 读取文件设置
-_, _, fox_two_distance, bombing_distance, _, _, _, _, _, _, _, _, _, _, _ = OpenFile.read_values()
+_, _, fox_two_distance, bombing_distance, _, _, _, _, _, _, bombing_speed_limit, max_bombing_distance, max_bombing_speed, _, _, _, _, _ = OpenFile.read_values()
 # print(f"减速距离设置为： {decelerate_distance} Km")
 print(f"热诱抛洒距离设置为： {fox_two_distance} Km")
 print(f"战区剩余距离判断设置为： {bombing_distance} Km")
+print(f"投弹速度距离设置为： {max_bombing_distance} Km")
+print(f"最大投弹速度设置为： {max_bombing_speed}")
 
 
 # 获取当前时间
@@ -223,7 +225,7 @@ def delta_control(delta):
 
 
 # 航向控制
-def heading_control(IAS, map_size, time_flag, num, fox_flag, decelerate, airbrake):
+def heading_control(IAS, map_size, time_flag, num, fox_flag, bombing_dist, decelerate, airbrake):
     if IAS < 500:
         flag = 0  # 不适合调整航向
         return flag
@@ -234,6 +236,11 @@ def heading_control(IAS, map_size, time_flag, num, fox_flag, decelerate, airbrak
     # player_coordinates, bombing_coordinates = port8111.get_bombing_point_coordinates()
     while -1 < num < 5:
         player_coordinates, bombing_coordinates, amount = port8111.get_bombing_point_select(num - 1)
+        if amount == 0:
+            print("heading_control 不存在战区")
+            flag = -1
+            return flag #port8111 error
+        
         if (num - 1) > amount:
             num -= 1
             if num < 0:
@@ -248,6 +255,9 @@ def heading_control(IAS, map_size, time_flag, num, fox_flag, decelerate, airbrak
 
     if distance < bombing_distance and time_flag == 0:
         flag = 5  # 准备弹起投弹键
+        return flag
+    if distance < max_bombing_distance and distance > bombing_distance and bombing_dist == 0:
+        flag = 55  # 准备控制速度准备投弹
         return flag
     if distance < fox_two_distance and fox_flag == 0:
         flag = 7  # 准备抛洒热诱

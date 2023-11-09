@@ -1,148 +1,387 @@
-ERROR:root:Error[Time:2023-08-27 16:53:11]:
+ERROR:root:Error[Time:2023-11-05 18:26:22]:
 NoneType: None
 ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\main.py", line 276, in <module>
-    x, y, center_x = GetWindow.window_found()
-                     ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\GetWindow.py", line 30, in window_found
-    time.sleep(3)
-KeyboardInterrupt
-NoneType: None
-ERROR:root:Error[Time:2023-08-27 16:58:09]:
-NoneType: None
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\main.py", line 493, in <module>
-    keyboard_event = Fighting.heading_control(IAS, map_size, time_flag, num, fox_2, decelerate, airbrake)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\Fighting.py", line 236, in heading_control
-    player_coordinates, bombing_coordinates, amount = port8111.get_bombing_point_select(num - 1)
-                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\port8111.py", line 171, in get_bombing_point_select
-    response = requests.get(url)  # 发送请求获取数据
-               ^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 73, in get
-    return request("get", url, params=params, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 59, in request
-    return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 589, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 703, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\adapters.py", line 486, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 790, in urlopen
-    response = self._make_request(
-               ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 536, in _make_request
-    response = conn.getresponse()
-               ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connection.py", line 461, in getresponse
-    httplib_response = super().getresponse()
-                       ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1520.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1378, in getresponse
-    response.begin()
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1520.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 318, in begin
-    version, status, reason = self._read_status()
-                              ^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1520.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 279, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1520.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
-    return self._sock.recv_into(b)
-           ^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
-NoneType: None
-ERROR:root:Error[Time:2023-08-27 17:11:58]:
-NoneType: None
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\main.py", line 643, in <module>
-    time.sleep(1)
-KeyboardInterrupt
-NoneType: None
-ERROR:root:Error[Time:2023-08-27 17:17:24]:
-NoneType: None
-ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\main.py", line 281, in <module>
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\main.py", line 300, in <module>
     hangar = StateMachine.declaration_death()
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\StateMachine.py", line 13, in declaration_death
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\StateMachine.py", line 13, in declaration_death
     h1, h2, v1, v2, v3, _, map_found, _, _, _, _ = Map.foundMap()
-                                                   ^^^^^^^^^^^^^^
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\Map.py", line 71, in foundMap
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\Map.py", line 72, in foundMap
     md5 = MD5()
-          ^^^^^
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\Map.py", line 20, in MD5
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\Map.py", line 20, in MD5
     response = requests.get(url, timeout=5)  # 设置超时时间为5秒
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 73, in get
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\api.py", line 73, in get
     return request("get", url, params=params, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\api.py", line 59, in request
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\api.py", line 59, in request
     return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 589, in request
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 589, in request
     resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\sessions.py", line 703, in send
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 703, in send
     r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\requests\adapters.py", line 486, in send
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\adapters.py", line 486, in send
     resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 790, in urlopen
     response = self._make_request(
-               ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 496, in _make_request
     conn.request(
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connection.py", line 395, in request
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 395, in request
     self.endheaders()
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1520.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1281, in endheaders
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1278, in endheaders
     self._send_output(message_body, encode_chunked=encode_chunked)
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1520.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 1041, in _send_output
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1038, in _send_output
     self.send(msg)
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1520.0_x64__qbz5n2kfra8p0\Lib\http\client.py", line 979, in send
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 976, in send
     self.connect()
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connection.py", line 243, in connect
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 243, in connect
     self.sock = self._new_conn()
-                ^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\connection.py", line 203, in _new_conn
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 203, in _new_conn
     sock = connection.create_connection(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\urllib3\util\connection.py", line 64, in create_connection
-    sock = socket.socket(af, socktype, proto)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1520.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 232, in __init__
-    _socket.socket.__init__(self, family, type, proto, fileno)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
 KeyboardInterrupt
 NoneType: None
-ERROR:root:Error[Time:2023-08-27 17:18:32]:
+ERROR:root:Error[Time:2023-11-05 19:26:24]:
 NoneType: None
 ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\main.py", line 304, in <module>
-    time.sleep(60)
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\main.py", line 387, in <module>
+    bollen = Fighting.compare_coordinates()
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\Fighting.py", line 72, in compare_coordinates
+    coordinates[0], coordinates[1], coordinates[2] = port8111.get_coordinates()
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\port8111.py", line 79, in get_coordinates
+    response = pool.get(url)  # 使用连接池发送请求
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1375, in getresponse
+    response.begin()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
 KeyboardInterrupt
 NoneType: None
-ERROR:root:Error[Time:2023-08-27 17:25:31]:
+ERROR:root:Error[Time:2023-11-06 01:50:38]:
 NoneType: None
 ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\main.py", line 596, in <module>
-    throttle_pull(3)
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\main.py", line 166, in throttle_pull
-    time.sleep(t)
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\main.py", line 527, in <module>
+    keyboard_event = Fighting.heading_control(IAS, map_size, time_flag, num, fox_2, bombing_dist, decelerate, airbrake)
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\Fighting.py", line 238, in heading_control
+    player_coordinates, bombing_coordinates, amount = port8111.get_bombing_point_select(num - 1)
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\port8111.py", line 185, in get_bombing_point_select
+    response = requests.get(url)  # 发送请求获取数据
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1375, in getresponse
+    response.begin()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
 KeyboardInterrupt
 NoneType: None
-ERROR:root:Error[Time:2023-08-27 17:38:35]:
+ERROR:root:Error[Time:2023-11-06 02:26:08]:
 NoneType: None
 ERROR:root:Traceback (most recent call last):
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\main.py", line 346, in <module>
-    x, y, center_x = GetWindow.window_found()
-                     ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Dell\Desktop\Bot\Aokana Flying Circus\GetWindow.py", line 30, in window_found
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\main.py", line 416, in <module>
+    pushW()
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\main.py", line 54, in pushW
     time.sleep(3)
+KeyboardInterrupt
+NoneType: None
+ERROR:root:Error[Time:2023-11-06 13:34:06]:
+NoneType: None
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\main.py", line 527, in <module>
+    keyboard_event = Fighting.heading_control(IAS, map_size, time_flag, num, fox_2, bombing_dist, decelerate, airbrake)
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\Fighting.py", line 238, in heading_control
+    player_coordinates, bombing_coordinates, amount = port8111.get_bombing_point_select(num - 1)
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\port8111.py", line 185, in get_bombing_point_select
+    response = requests.get(url)  # 发送请求获取数据
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1375, in getresponse
+    response.begin()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+KeyboardInterrupt
+NoneType: None
+ERROR:root:Error[Time:2023-11-06 18:01:09]:
+NoneType: None
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\main.py", line 527, in <module>
+    keyboard_event = Fighting.heading_control(IAS, map_size, time_flag, num, fox_2, bombing_dist, decelerate, airbrake)
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\Fighting.py", line 238, in heading_control
+    player_coordinates, bombing_coordinates, amount = port8111.get_bombing_point_select(num - 1)
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\port8111.py", line 185, in get_bombing_point_select
+    response = requests.get(url)  # 发送请求获取数据
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1375, in getresponse
+    response.begin()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+KeyboardInterrupt
+NoneType: None
+ERROR:root:Error[Time:2023-11-07 15:07:39]:
+NoneType: None
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\main.py", line 435, in <module>
+    Vy, Hm, throttle, IAS, airbrake = port8111.getState()
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\port8111.py", line 44, in getState
+    Vy, Hm, IAS, throttle, airbrake = getData(url, "Vy, m/s", "H, m", "IAS, km/h", "throttle 1, %", "airbrake, %")
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\port8111.py", line 29, in getData
+    response = pool.get(url)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1375, in getresponse
+    response.begin()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+KeyboardInterrupt
+NoneType: None
+ERROR:root:Error[Time:2023-11-08 07:28:29]:
+NoneType: None
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1375, in getresponse
+    response.begin()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\util\retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1375, in getresponse
+    response.begin()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\main.py", line 300, in <module>
+    hangar = StateMachine.declaration_death()
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\StateMachine.py", line 13, in declaration_death
+    h1, h2, v1, v2, v3, _, map_found, _, _, _, _ = Map.foundMap()
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\Map.py", line 72, in foundMap
+    md5 = MD5()
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\Map.py", line 20, in MD5
+    response = requests.get(url, timeout=5)  # 设置超时时间为5秒
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+NoneType: None
+ERROR:root:Error[Time:2023-11-08 17:39:49]:
+NoneType: None
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\main.py", line 370, in <module>
+    x, y, center_x = GetWindow.window_found()
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\GetWindow.py", line 30, in window_found
+    time.sleep(3)
+KeyboardInterrupt
+NoneType: None
+ERROR:root:Error[Time:2023-11-08 23:37:56]:
+NoneType: None
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\main.py", line 300, in <module>
+    hangar = StateMachine.declaration_death()
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\StateMachine.py", line 13, in declaration_death
+    h1, h2, v1, v2, v3, _, map_found, _, _, _, _ = Map.foundMap()
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\Map.py", line 72, in foundMap
+    md5 = MD5()
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\Map.py", line 20, in MD5
+    response = requests.get(url, timeout=5)  # 设置超时时间为5秒
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 395, in request
+    self.endheaders()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1038, in _send_output
+    self.send(msg)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 976, in send
+    self.connect()
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 243, in connect
+    self.sock = self._new_conn()
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+KeyboardInterrupt
+NoneType: None
+ERROR:root:Error[Time:2023-11-09 14:03:18]:
+NoneType: None
+ERROR:root:Traceback (most recent call last):
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\main.py", line 387, in <module>
+    bollen = Fighting.compare_coordinates()
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\Fighting.py", line 72, in compare_coordinates
+    coordinates[0], coordinates[1], coordinates[2] = port8111.get_coordinates()
+  File "C:\Users\wangj\Desktop\Aokana-Flying-Circus-master\port8111.py", line 79, in get_coordinates
+    response = pool.get(url)  # 使用连接池发送请求
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connectionpool.py", line 536, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wangj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\site-packages\urllib3\connection.py", line 461, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 1375, in getresponse
+    response.begin()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\http\client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
 KeyboardInterrupt
 NoneType: None

@@ -68,10 +68,10 @@ def imgStart(x, y):
 
 # 研发
 def img_research(x, y):
-    sx = x + 300
-    sy = y + 500
-    ex = x + 500
-    ey = y + 600
+    sx = x + 100
+    sy = y + 600
+    ex = x + 400
+    ey = y + 700
     precision = 0.9
     imgData = "image/Back/Research.png"
     bollen = imgSearch(imgData, sx, sy, ex, ey, precision)

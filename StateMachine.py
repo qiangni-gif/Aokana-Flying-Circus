@@ -63,6 +63,10 @@ def hangar_identify():
     if research == 1:
         flag = 7    # 研发按钮
         return flag
+    repair = HangarMenu.repair_found(x, y)
+    if repair == 1:
+        flag = 8 # 维修 回车
+        return flag
     else:  # 如果全部无法识别，返回标志5
         flag = 6  # 需要Esc
         return flag

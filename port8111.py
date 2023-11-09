@@ -74,9 +74,18 @@ def extractPlayerCoordinates(data):
 
 # 获取双方机场坐标以及玩家坐标
 def get_coordinates():
+    # print("获取双方机场坐标以及玩家坐标")
     url = 'http://' + address + ':8111/map_obj.json'
     response = pool.get(url)  # 使用连接池发送请求
-    data = response.json()
+    
+    try:
+        data = response.json()
+    except json.JSONDecodeError as e:
+        # 处理JSONDecodeError异常
+        print("[get_coordinates] JSON解析错误:", e)
+        # 或者提供默认值
+        data = []
+        
     player_coordinates = (-1, -1)
     friendly_airport = (-1, -1)
     enemy_airport = (-1, -1)
@@ -88,7 +97,7 @@ def get_coordinates():
             fy = item.get("sy")
             friendly_airport = (fx, fy)
         # 敌方机场
-        elif item.get("type") == "airfield" and item.get("color") == "#fa0C00":
+        elif item.get("type") == "airfield" and item.get("color") == "#fa0000":
             sx = item.get("sx")
             sy = item.get("sy")
             enemy_airport = (sx, sy)
@@ -107,6 +116,7 @@ def get_coordinates():
 
 # 获得战区坐标和载具坐标
 def get_bombing_point_coordinates():
+    # print("获得战区坐标和载具坐标")
     url = 'http://' + address + ':8111//map_obj.json'
     response = pool.get(url)  # 使用连接池发送请求
     data = response.json()
@@ -128,6 +138,7 @@ def get_bombing_point_coordinates():
 
 # 飞机航向专属get
 def get_indicators(url, *args):
+    # print("飞机航向专属get")
     response = pool.get(url)
     data = response.json()
     result = []
@@ -142,6 +153,7 @@ def get_indicators(url, *args):
 
 # 获得飞机航向
 def get_compass():
+    # print("获得飞机航向")
     url = 'http://' + address + ':8111/indicators'
     compass = get_indicators(url, "compass")
     if compass is None:
@@ -151,6 +163,7 @@ def get_compass():
 
 # 获得地图大小
 def get_size():
+    # print("获得地图大小")
     try:
         url = 'http://' + address + ':8111/map_info.json'
         response = pool.get(url)  # 使用连接池发送请求
@@ -167,6 +180,7 @@ def get_size():
 
 # 获得战区坐标和载具坐标(test)
 def get_bombing_point_select(index):
+    # print("获得战区坐标和载具坐标(test)")
     url = 'http://' + address + ':8111/map_obj.json'
     response = requests.get(url)  # 发送请求获取数据
 
@@ -174,7 +188,7 @@ def get_bombing_point_select(index):
         data = response.json()
     except json.JSONDecodeError as e:
         # 处理JSONDecodeError异常
-        print("JSON解析错误:", e)
+        print("[get_bombing_point_select] JSON解析错误:", e)
         # 或者提供默认值
         data = []
 

@@ -35,6 +35,11 @@ def esc():
     time.sleep(0.3)
     keyboard.release('esc')
 
+#回车单击事件
+def enter():
+    keyboard.press('enter')
+    time.sleep(0.3)
+    keyboard.release('enter')
 
 # 单击【加入战斗】
 def start_game(x, y):
@@ -109,6 +114,10 @@ def back(x, y):
 # 鼠标居中
 def mouse_center(x, y):
     pyautogui.moveTo(x + 650, y + 360)
+    # pyautogui.moveTo(x + 400, y)
+    # time.sleep(5)
+    # pyautogui.moveTo(x + 800, y + 300)
+    # print("move mouse to {} {}".format(x + 650,y + 360))
 
 
 # 减速板事件
@@ -185,7 +194,7 @@ def random_mode(mode):
 
 # 研发按钮点击
 def research_click(x, y):
-    pyautogui.moveTo(x + 400, y + 575)
+    pyautogui.moveTo(x + 350, y + 650)
     time.sleep(1)
     click()
 
@@ -210,18 +219,28 @@ logging.basicConfig(filename='log.txt', level=logging.ERROR)
 
 # 获取data.txt中的设置
 (get_delay,
- direction_delay, _, _,
+ direction_delay, 
+ _, 
+ _,
  press_time,
  harrier,
  mode,
  delay_takeoff,
  speed_limit,
  max_speed,
+ bombing_speed_limit,
+ max_bombing_distance,
+ max_bombing_speed,
  ccrp_time,
  thr_control,
  thr_min,
  thr_max,
  afterburner) = OpenFile.read_values()
+if harrier == 1:
+    thr_control = 1
+    afterburner = 0
+    print(f"是鹞式战斗机： {harrier} 最大节流阀：{thr_max} 加力模式修改：{afterburner}")
+    
 print(f"数据请求延时设置为： {get_delay} s")
 print(f"方向调整延时设置为： {direction_delay} s")
 print(f"投弹键剩余按压时间： {press_time} s")
@@ -306,13 +325,18 @@ while True:
                 mouse_center(x, y)
                 time.sleep(1)
                 esc()
-                print("Esc")
+                print("无法识别,Esc事件")
                 flag = 4  # 4 esc事件，需要重新判断是否可以加入战斗
                 time.sleep(1)
             elif mouse_event == 5:  # 研发选项
                 research_click(x, y)
                 print("研发")
                 time.sleep(1)
+            elif mouse_event == 6:  # 维修 回车
+                mouse_center(x, y)
+                print("维修")
+                time.sleep(1)
+                enter()
             else:  # 防报错容错
                 print("机库鼠标事件未知")
         # elif hangar == 1:   # 1 正在加载，无法请求地图
@@ -328,7 +352,7 @@ while True:
             flag = 7  # 7 飞机正常飞行中
             break
         elif hangar == 4:  # 4 载具未出生
-            print("载具未出生")
+            print("载具未出生 hangar=4")
             flag = 8  # 8 载具未出生
             break
 
@@ -366,7 +390,7 @@ while True:
                 flag = 10  # 载具出生
                 break
             else:
-                print("载具未出生")
+                print("载具未出生 battle_state=3")
         elif flag == 9:
             bollen = Fighting.compare_coordinates()
             if bollen != -1:
@@ -374,10 +398,10 @@ while True:
                 flag = 10  # 载具出生
                 break
             else:
-                print("载具未出生")
+                print("载具未出生 flag == 9")
 
     # 事件标志与热诱标志
-    airfield_height = start_compass = airfield_compass = time_flag = fox_2 = 0
+    airfield_height = start_compass = airfield_compass = time_flag = fox_2 = bombing_dist = 0
     # 获取当前时间
     delay_start_time = get_current_time()
     # 防止checkpoint is None
@@ -427,7 +451,7 @@ while True:
                               f" 战区选择：{num} ,减速距离 {decelerate} km")
                         flag = 12
                 elif bollen == -1 and flag == 9:
-                    print("载具未出生")
+                    print("载具未出生 keyboard_event=0")
                     break
                 else:
                     keyboard.release('u')
@@ -451,13 +475,13 @@ while True:
 
             # 节流阀控制
             if throttle < thr_min and thr_control == 1:
-                throttle_push(thr_min-throttle)
+                throttle_push(0.1)
             elif throttle > thr_max and thr_control == 1:
-                throttle_pull(throttle-thr_max)
+                throttle_pull(0.1)
 
             # 空出图补救
             if 99 < throttle < 110 and afterburner == 1:
-                print(f"节流阀：{throttle} 正在加力;")
+                print(f"节流阀：{throttle} 正在加力 -- 空出图补救;")
                 pushW()
             # CCRP延时
             if ccrp_flag == 0:
@@ -489,10 +513,18 @@ while True:
                     print("恢复速度")
                     keyboard_h()
                     time.sleep(1)
+            
+            if bombing_dist == 1 and max_bombing_speed != 0:
+                if IAS > max_bombing_speed and airbrake < 1:
+                    print("开始减速")
+                    keyboard_h()
+                elif IAS < (max_bombing_speed - 50) and airbrake > 99:
+                    print("恢复速度")
+                    keyboard_h()
 
             # 关于航向的控制（x轴）
             if time_flag < 2 and ccrp_flag > -1:  # 如果玩家未完成投弹,并且非延迟入场
-                keyboard_event = Fighting.heading_control(IAS, map_size, time_flag, num, fox_2, decelerate, airbrake)
+                keyboard_event = Fighting.heading_control(IAS, map_size, time_flag, num, fox_2, bombing_dist, decelerate, airbrake)
             elif time_flag < 2 and ccrp_flag == -1:  # 如果玩家未完成投弹，并且开启延迟入场
                 ccrp_flag, keyboard_event = Fighting.delay_control(IAS, delay_start_time,
                                                                    wait_time, north_direction, south_direction)
@@ -543,12 +575,20 @@ while True:
                 # 获取当前时间
                 start_time = get_current_time()
                 time_flag = 1
+                print("即将到达战局，开始计时")
             elif keyboard_event == 7 and fox_2 == 0:
                 # 长空之王专属热诱弹
                 fox_two()
                 fox_2 = 1
                 print("开启热诱循环")
-
+            elif keyboard_event == 55 and bombing_dist == 0:
+                bombing_dist = 1
+                print("准备控制速度准备投弹")
+            elif keyboard_event == -1:
+                print("port8111 error")
+                flag = 0
+                break
+                
             # 计算出3个返航检查点
             if IAS < 200 and mode == 3:
                 start_compass = port8111.get_compass()
@@ -565,6 +605,7 @@ while True:
                 seconds_passed = time_difference.total_seconds()
                 if seconds_passed > press_time:  # 弹起投弹键
                     keyboard.release('u')
+                    bombing_dist = 0
                     time_flag = 2  # 进入阶段二，飞向敌方机场
                     if airbrake > 50:
                         time.sleep(0.1)
@@ -624,7 +665,7 @@ while True:
             throttle_push(throttle_control)
             print(f"增大节流阀{throttle_control * 100}%")
         elif throttle_control < 0:
-            throttle_pull(-throttle_control)
+            throttle_pull(throttle_control)
             print(f"减小节流阀{(-throttle_control) * 100}%")
         time.sleep(0.1)
         if airbrake_control < 0 and airbrake > 75:
@@ -640,7 +681,7 @@ while True:
             moveUp(keyboard_event)
             print(f"抬头{keyboard_event}")
         elif keyboard_event < 0:
-            moveDwon(-keyboard_event)
+            moveDwon(keyboard_event)
             print(f"下压{-keyboard_event}")
         time.sleep(0.1)
 
@@ -649,6 +690,6 @@ while True:
         if keyboard_event > 0:
             moveR(keyboard_event)
         elif keyboard_event < 0:
-            moveL(-keyboard_event)
+            moveL(keyboard_event)
         time.sleep(0.1)
 

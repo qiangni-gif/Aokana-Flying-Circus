@@ -41,13 +41,16 @@ def read_values():
                 r'delay_takeoff=(\d+)',
                 r'speed_limit=(\d+)',
                 r'max_speed=(\d+)',
+                r'bombing_speed_limit=(\d+)',
+                r'max_bombing_distance=(\d+)',
+                r'max_bombing_speed=(\d+)',
                 r'ccrp_time=(\d+)',
                 r'throttle_control=(\d+)',
                 r'thr_min=(\d+)',
                 r'thr_max=(\d+)',
                 r'afterburner=(\d+)']
     # 如果想要增加参数，那么这里需要增加默认值
-    default_values = [0.5, -1, 0.5, 10, 3, 5, 0, 2, 0, 0, 950, 30, 0, 90, 95]
+    default_values = [0.5, 0.5, 10, 3, 5, 0, 2, 0, 0, 950, 1, 8, 900, 30, 0, 90, 95, 1]
     # 如果想要增加参数，那么这里需要增加字段
     value_descriptions = ["数据请求延时",
                           "方位调整延时",
@@ -59,7 +62,9 @@ def read_values():
                           "延迟入场",
                           "限速开关",
                           "最大速度",
-                          "端口请求模式",
+                          "投弹限速开关",
+                          "投弹速度距离",
+                          "最大投弹速度",
                           "CCRP启动延时",
                           "节流阀调整",
                           "节流阀控制_min",
@@ -78,6 +83,9 @@ def read_values():
      delay_takeoff,
      speed_limit,
      max_speed,
+     bombing_speed_limit,
+     max_bombing_distance,
+     bombing_speed_limit,
      ccrp_time,
      throttle_control,
      thr_min,
@@ -95,6 +103,9 @@ def read_values():
             delay_takeoff,
             speed_limit,
             max_speed,
+            bombing_speed_limit,
+            max_bombing_distance,
+            bombing_speed_limit,
             ccrp_time,
             throttle_control,
             thr_min,
